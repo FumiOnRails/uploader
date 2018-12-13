@@ -5,7 +5,6 @@ module PostsHelper
   def isPicture?(file)
     pictureExt = %w(.jpg .jpeg .gif .png)
     ext=File.extname(file).downcase
-    
     return pictureExt.include?(ext)
   end
   
