@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3">
+    <h4>投稿フォーム</h4>
+      <%= form_for @post do |f| %>
+        <%= f.text_area :content, class:"form-control", placeholder:"ここに入力してください" %>
+        <br>
+        <%= f.file_field :files, multiple: true%>
+        <br>
+        <%= f.submit "投稿する", class:"btn btn-primary" %>
+      <% end %>
+  </div>
+  <div class="col-md-9">
+    <h4>投稿一覧</h4>
+    <hr>
+    <% @posts.each do |p| %>
+      <%= p.content %>
+      <br>
+        <% if p.files? %>
+          <ul class="post-list">
+            <% p.files.each do |file| %>
+              <li class="post">
+                <% if isPicture?(file.url) %>
+                  <%= image_tag file.url, class:"file"%>
+                <% elsif isVideo?(file.url) %>
+                  <%= video_tag file.url, controls: true, class:"file"%>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      <br>
+      <%= link_to "削除", p, method: :delete, data:{confirm: "You sure?"} %>
+      <hr>
+    <% end %>
+  </div>
+</div>
