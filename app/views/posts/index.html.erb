@@ -4,7 +4,7 @@
       <%= form_for @post do |f| %>
         <%= f.text_area :content, class:"form-control", placeholder:"ここに入力してください" %>
         <br>
-        <%= f.file_field :files, multiple: true %>
+        <%= f.file_field :files, multiple: true,accept:"image/jpeg,image/gif,image/png,video/mp4,video/mov,video/wmv" %>
         <br>
         <%= f.submit "投稿する", class:"btn btn-primary" %>
       <% end %>

@@ -45,6 +45,8 @@ gem 'twitter-bootstrap-rails'
 gem 'sprockets', '3.7.2'
 gem 'execjs'
 
+gem 'fog-aws'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3'
@@ -70,6 +72,5 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
-  gem 'fog-aws'
 end
 
