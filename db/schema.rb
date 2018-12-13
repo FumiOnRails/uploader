@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_104819) do
+ActiveRecord::Schema.define(version: 2018_12_13_031530) do
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
-    t.json "files"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "files"
   end
 
 end
